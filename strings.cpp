@@ -232,6 +232,36 @@ bool oneCallrotation ( string s1 , string s2 ) {
 }
 
 
+/*
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+*/
+
+// Version one : using arrays 
+int firstUniqChar(string s) {
+      int arr[256] = {0};
+      for (int i = 0; i < s.size(); ++i){
+         arr[s[i]]+=1;
+      }
+      for (int i = 0; i < s.size(); ++i) {
+         if (arr[s[i]] == 1 ) {
+           return s.find(s[i]);
+         }
+      }
+      return -1;
+    }
+//Version two: using map 
+
+class Solution {
+public:
+    int firstUniqChar(string s) {
+      unordered_map <char , int> m;
+      for (auto c : s ) m[c]++;
+      for (int i = 0; i < s.size(); ++i) {
+        if (m[s[i]] == 1) return i;
+      }
+      return -1;
+    }
+};
 
 
 int main() {
