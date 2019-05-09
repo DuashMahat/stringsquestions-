@@ -251,8 +251,7 @@ int firstUniqChar(string s) {
     }
 //Version two: using map 
 
-class Solution {
-public:
+
     int firstUniqChar(string s) {
       unordered_map <char , int> m;
       for (auto c : s ) m[c]++;
@@ -261,7 +260,7 @@ public:
       }
       return -1;
     }
-};
+}
 
 
 int main() {
